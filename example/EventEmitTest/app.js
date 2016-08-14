@@ -31,7 +31,7 @@ NotificationDispatcher.on(NotificationEvent,
             eventInstance.setLink(url.format(parsedLink));
             console.log('[Model#Renamer] http checked! now change https!');
         }
-    }, EventPriority.LOW);
+    }, EventPriority.HIGH);
 
 /**
  * @description
@@ -49,7 +49,7 @@ NotificationDispatcher.on(NotificationEvent,
             eventInstance.setCancelled();
             console.log('[Model#Checker] link protocol is not https! now event cancelled!');
         }
-    }, EventPriority.HIGH);
+    }, EventPriority.LOW);
 
 /**
  * @description

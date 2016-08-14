@@ -51,3 +51,5 @@ class EventPriority {
         return 5;
     }
 }
+
+module.exports = EventPriority;

@@ -40,8 +40,10 @@ Create eventInstance, create event call.
 - If you want to use some Event, it must be makes new.
 - (ex. `let myEvent = new NotificationEvent();`)
 - Do what ever you want it eventInstance, and call the dispatcher.
-- (ex. `NotificationDispatcher.call(needGoogleConnectEvent);`)
+- (ex. `NotificationDispatcher.call(myEvent);`)
 - And yes, simply event will be send every listener! :P
+
+![Showcase](http://i.imgur.com/KqX3yDN.gif)
 
 ## Example
 

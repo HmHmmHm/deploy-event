@@ -1,6 +1,6 @@
 {
   "name": "deploy-event",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "deploy-event make it able to create a cancellable class-based events. (priority can be specified)",
   "main": "index.js",
   "scripts": {

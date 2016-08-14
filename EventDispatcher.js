@@ -1,7 +1,13 @@
 let Event = require('./Event.js');
 
 class EventDispatcher {
-    constructor() {
+    /**
+     * @param {boolean} doAutomaticBreak
+     */
+    constructor(doAutomaticBreak) {
+        if(doAutomaticBreak === undefined) doAutomaticBreak = false;
+        this.doAutomaticBreak = doAutomaticBreak;
+
         this._eventListeners = {};
     }
 
@@ -38,7 +44,8 @@ class EventDispatcher {
                 continue;
             for (let key in listeners[index])
                 listeners[index][key](event);
-            if (event.isCancelled()) break;
+
+            if (this.doAutomaticBreak && event.isCancelled()) break;
         }
         return true;
     }
