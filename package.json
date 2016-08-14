@@ -1,0 +1,34 @@
+{
+  "name": "deploy-event",
+  "version": "1.0.0",
+  "description": "deploy-event make it able to create a cancellable class-based events. (priority can be specified)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmhmmhm/deploy-event.git"
+  },
+  "keywords": [
+    "events",
+    "emitter",
+    "emit",
+    "event",
+    "clasbased",
+    "event",
+    "cancellable",
+    "event",
+    "priority",
+    "dispatcher",
+    "cancellable event",
+    "class based event",
+    "priority can be specified event"
+  ],
+  "author": "hmhmmhm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmhmmhm/deploy-event/issues"
+  },
+  "homepage": "https://github.com/hmhmmhm/deploy-event#readme"
+}
