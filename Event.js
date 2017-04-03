@@ -2,38 +2,11 @@ class Event {
     /**
      * @param {boolean} isSupportCancellable
      */
-    constructor(isSupportCancellable) {
-        this.__eventName = null;
+    constructor(isSupportCancellable, fileName) {
+        this.__eventName = fileName;
         this._isCancelled = false;
         this._isSupportCancellable = (isSupportCancellable != null) ?
             isSupportCancellable : true;
-    }
-
-    /**
-     * @return {string}
-     */
-    getEventName() {
-        return this.__eventName == null ?
-            __filename
-            .replace(__dirname, '')
-            .replace('/', '')
-            .replace('\\', '')
-            .replace('.js', '') :
-            this.__eventName;
-    }
-
-    /**
-     * @return {string}
-     */
-    getEventFilePath() {
-        return __filename;
-    }
-
-    /**
-     * @return {string}
-     */
-    static getEventFilePath() {
-        return __filename;
     }
 
     /**
@@ -51,6 +24,10 @@ class Event {
         if (!this._isSupportCancellable) return;
         if (value == null) value = true;
         this._isCancelled = value;
+    }
+
+    getEventName() {
+        return this.__eventName;
     }
 }
 

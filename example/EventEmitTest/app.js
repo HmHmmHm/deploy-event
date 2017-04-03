@@ -71,5 +71,4 @@ NotificationDispatcher.on(NotificationEvent,
 
 let needGoogleConnectEvent = new NotificationEvent();
 needGoogleConnectEvent.setLink('http://www.google.com');
-
 NotificationDispatcher.call(needGoogleConnectEvent);

@@ -2,7 +2,7 @@ let Event = require('../../../index.js').Event;
 
 class NotificationEvent extends Event {
     constructor(link) {
-        super(true); //necessary *important*
+        super(true, __filename); //necessary *important*
 
         this._link = '';
         this.setLink(link);

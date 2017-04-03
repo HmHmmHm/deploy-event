@@ -5,7 +5,7 @@ class EventDispatcher {
      * @param {boolean} doAutomaticBreak
      */
     constructor(doAutomaticBreak) {
-        if(doAutomaticBreak === undefined) doAutomaticBreak = false;
+        if (doAutomaticBreak === undefined) doAutomaticBreak = false;
         this.doAutomaticBreak = doAutomaticBreak;
 
         this._eventListeners = {};
@@ -21,13 +21,13 @@ class EventDispatcher {
      * @param {integer} priority
      */
     on(event, callback, priority) {
-        if (typeof(event.getEventFilePath) != 'function' || event.getEventFilePath() == null) return false;
+        let preEventInstance = new event();
         if (priority == null) priority = 0;
-        if (!this._eventListeners[event.getEventFilePath()])
-            this._eventListeners[event.getEventFilePath()] = {};
-        if (!this._eventListeners[event.getEventFilePath()][String(priority)])
-            this._eventListeners[event.getEventFilePath()][String(priority)] = [];
-        this._eventListeners[event.getEventFilePath()][String(priority)].push(callback);
+        if (!this._eventListeners[preEventInstance.getEventName()])
+            this._eventListeners[preEventInstance.getEventName()] = {};
+        if (!this._eventListeners[preEventInstance.getEventName()][String(priority)])
+            this._eventListeners[preEventInstance.getEventName()][String(priority)] = [];
+        this._eventListeners[preEventInstance.getEventName()][String(priority)].push(callback);
         return true;
     }
 
@@ -36,9 +36,9 @@ class EventDispatcher {
      */
     call(event) {
         if (!(event instanceof Event)) return false;
-        if (!this._eventListeners[event.getEventFilePath()]) return true;
+        if (!this._eventListeners[event.getEventName()]) return true;
 
-        let listeners = this._eventListeners[event.getEventFilePath()];
+        let listeners = this._eventListeners[event.getEventName()];
         for (let index = 5; index >= 0; index--) {
             if (!listeners[index])
                 continue;
